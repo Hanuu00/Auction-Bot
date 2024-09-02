@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands, tasks
 from datetime import datetime, timedelta
+import os 
 
 # 디스코드 봇 설정
 intents = discord.Intents.default()
@@ -175,7 +176,8 @@ async def 경매목록(ctx):
         embed = discord.Embed(title="현재 진행 중인 경매 목록", description=auction_list, color=discord.Color.purple())
         await ctx.send(embed=embed)
 
+access.token = os.environ["BOT_TOKEN"]
 # 디스코드 봇 토큰
-TOKEN = 'MTI3OTcwMzM1ODgxMDM2MTg2OA.G4dmp2.6uWqpxgpy1ak_k--WGXHHf_rxMwgENMRVhB2mk'
+TOKEN = 'access_token'
 
-bot.run(TOKEN)
+bot.run(access_token)
